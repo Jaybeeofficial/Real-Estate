@@ -29,6 +29,29 @@ function openNav() {
   });
 
 
+  ScrollReveal().reveal('.scroll-reveal', {
+    duration: 1000,         // Animation duration: 1s
+    delay: 500,            // Delay before animation starts: 1s
+    distance: '150px',      // Increased distance: farther movement
+    origin: 'bottom',       // Animate from bottom
+    easing: 'ease-in-out',
+    interval: 100,          // Delay between items (only applies to multiple)
+    reset: false     // Do not reset animation on scroll back
+  });
+
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute("href"));
+      if (target) {
+        target.scrollIntoView({
+          behavior: "smooth"
+        });
+      }
+    });
+  });
+
+
   const revealElements = document.querySelectorAll('.service_item, .title_container');
 
   const observer = new IntersectionObserver(entries => {
@@ -178,15 +201,7 @@ function openNav() {
   });
 
 
-  ScrollReveal().reveal('.scroll-reveal', {
-    duration: 1000,         // Animation duration: 1s
-    delay: 500,            // Delay before animation starts: 1s
-    distance: '150px',      // Increased distance: farther movement
-    origin: 'bottom',       // Animate from bottom
-    easing: 'ease-in-out',
-    interval: 100,          // Delay between items (only applies to multiple)
-    reset: false     // Do not reset animation on scroll back
-  });
+  
 
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener("click", function (e) {

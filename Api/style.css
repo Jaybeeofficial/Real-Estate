@@ -358,7 +358,7 @@
 }
 
 .product_card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-5px);
 }
 
 .product_card img {
@@ -870,6 +870,7 @@
   background-color: green;
   transform: scale(1.2);
 }
+
 
 /* Responsive */
 
